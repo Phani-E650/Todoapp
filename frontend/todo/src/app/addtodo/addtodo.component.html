@@ -1,9 +1,10 @@
 <h1>Todo</h1>
 <div class="container">
+    <!-- <div class="alert alert-warning" *ngIf="todoform.dirty && todoform.invalid">Enter valid values</div> -->
     <form (ngSubmit)="!todoform.invalid && submit()" #todoform="ngForm">
         <fieldset class="form-group">
             <label>description</label>
-            <input type="text" [(ngModel)]=todo.desc class="form-control" name="description" required="required">
+            <input type="text" [(ngModel)]=todo.desc class="form-control" name="description" minlength="5" required="required">
         </fieldset>
         <fieldset class="form-group">
             <label>isCompleted?</label><br>
